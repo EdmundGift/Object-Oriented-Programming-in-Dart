@@ -1,0 +1,44 @@
+// Define an interface
+abstract class Animal {
+  void eat();
+}
+
+// Define a base class
+class Mammal {
+  void breathe() {
+    print('Breathing air...');
+  }
+}
+
+// Define a class that implements the interface and extends the base class
+class Dog extends Mammal implements Animal {
+  @override
+  void eat() {
+    print('Eating...');
+  }
+
+  // Override a method from the base class
+  @override
+  void breathe() {
+    super.breathe();
+    print('Sniffing...');
+  }
+
+  // A method that demonstrates the use of a loop
+  void bark(int times) {
+    for (var i = 0; i < times; i++) {
+      print('Bark!');
+    }
+  }
+}
+
+void main() {
+  // Initialize an instance of Dog with data from a file
+  // In this case, we'll just simulate this with a variable
+  var timesToBark = 5; // Pretend we got this from a file
+
+  var myDog = Dog();
+  myDog.eat();
+  myDog.breathe();
+  myDog.bark(timesToBark);
+}
